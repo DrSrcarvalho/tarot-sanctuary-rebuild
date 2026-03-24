@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import AboutSection from "@/components/AboutSection";
 import CardsSection from "@/components/CardsSection";
 import ConsultationSection from "@/components/ConsultationSection";
