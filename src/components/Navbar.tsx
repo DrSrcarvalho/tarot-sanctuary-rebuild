@@ -58,14 +58,6 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <div className="flex gap-3 pt-2">
-            <a href="#contato" className="font-display text-sm border border-primary/50 text-primary px-4 py-2 rounded uppercase">
-              Entrar
-            </a>
-            <a href="#consulta" className="font-display text-sm bg-primary text-primary-foreground px-4 py-2 rounded uppercase">
-              Cadastrar
-            </a>
-          </div>
         </div>
       )}
     </nav>
