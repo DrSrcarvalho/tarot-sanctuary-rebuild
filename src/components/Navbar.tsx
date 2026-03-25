@@ -35,20 +35,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
-          <a
-            href="#contato"
-            className="font-display text-sm tracking-wider border border-primary/50 text-primary px-5 py-2 rounded hover:bg-primary/10 transition-colors uppercase"
-          >
-            Entrar
-          </a>
-          <a
-            href="#consulta"
-            className="font-display text-sm tracking-wider bg-primary text-primary-foreground px-5 py-2 rounded hover:bg-gold-dark transition-colors uppercase"
-          >
-            Cadastrar
-          </a>
-        </div>
 
         {/* Mobile toggle */}
         <button
