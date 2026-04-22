@@ -22,15 +22,6 @@ const ConsultationSection = () => {
         </div>
 
         <div className="bg-card border border-border rounded-xl p-8 md:p-10 max-w-md mx-auto hover:border-gold transition-colors glow-gold">
-          <div className="text-center mb-6">
-            <span className="font-display text-sm tracking-wider uppercase text-primary">
-              Por Pergunta
-            </span>
-            <div className="font-display text-4xl text-gold-gradient mt-2">
-              R$20,00
-            </div>
-          </div>
-
           <ul className="space-y-3 mb-8">
             {benefits.map((b) => (
               <li key={b} className="flex items-start gap-3">
