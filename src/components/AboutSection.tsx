@@ -32,10 +32,10 @@ const AboutSection = () => {
               Sobre o Tarot Místico
             </h2>
             <p className="font-body text-lg text-foreground/70 leading-relaxed mb-4">
-              Há mais de uma década, dedico minha vida ao estudo profundo das cartas do Tarot de Waite. Cada consulta é uma jornada sagrada onde as energias do universo se manifestam através das cartas, revelando caminhos e possibilidades que aguardam por você.
+              Há mais de uma década, dedico minha vida ao estudo profundo das cartas do Tarot de Waite em São Paulo. Cada consulta de tarot místico é uma jornada única onde as energias do universo se manifestam através das cartas, revelando caminhos e possibilidades que aguardam por você.
             </p>
             <p className="font-body text-lg text-foreground/70 leading-relaxed">
-              Minha missão é guiar você através das mensagens ocultas nas cartas, oferecendo clareza em momentos de dúvida e esperança quando o caminho parece nebuloso.
+              Minha missão é guiar você através das mensagens ocultas nas cartas do tarot, oferecendo clareza em momentos de dúvida e esperança quando o caminho parece nebuloso. Com mais de 500 consultas realizadas e 98% de satisfação, o Tarot Místico é referência em leitura de tarot online e presencial.
             </p>
           </div>
         </div>
