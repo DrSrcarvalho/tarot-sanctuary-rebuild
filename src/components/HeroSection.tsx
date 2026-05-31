@@ -14,7 +14,7 @@ const HeroSection = () => {
         <div className="inline-flex items-center gap-2 border border-primary/30 rounded-full px-5 py-2 mb-8">
           <Sparkles className="w-4 h-4 text-primary" />
           <span className="font-body text-sm text-foreground/70">
-            Descubra seu destino através das cartas
+            Tarot Místico • São Paulo • Online
           </span>
         </div>
 
@@ -25,8 +25,7 @@ const HeroSection = () => {
         </h1>
 
         <p className="font-body text-lg md:text-xl text-foreground/60 max-w-xl mx-auto mb-10 leading-relaxed">
-          Permita que a sabedoria ancestral das cartas ilumine seu caminho.
-          Consultas personalizadas para guiar suas decisões mais importantes.
+          Permita que a sabedoria ancestral das cartas ilumine seu caminho. Consultas de tarot místico personalizadas para guiar suas decisões mais importantes — amor, trabalho, espiritualidade e novos caminhos.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
