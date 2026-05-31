@@ -14,10 +14,10 @@ const ConsultationSection = () => {
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-12">
           <h2 className="font-display text-3xl md:text-4xl tracking-wider uppercase text-gold-gradient mb-4">
-            Consulta de Tarot
+            Agende sua Consulta de Tarot Místico Online
           </h2>
           <p className="font-body text-lg text-foreground/60">
-            Faça sua pergunta e receba a orientação das cartas para iluminar seu caminho.
+            Faça sua pergunta e receba a orientação das cartas do tarot para iluminar seu caminho. Atendimento online por WhatsApp.
           </p>
         </div>
 
