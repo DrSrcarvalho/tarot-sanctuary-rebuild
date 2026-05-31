@@ -15,10 +15,6 @@ const faqs = [
     a: "O tarot é uma ferramenta milenar de autoconhecimento e orientação. Com mais de 10 anos de experiência e 500 consultas realizadas, o Tarot Místico tem 98% de satisfação entre os consulentes.",
   },
   {
-    q: "Qual o valor da consulta de tarot?",
-    a: "Cada consulta de tarot místico online custa R$ 20,00. Aceitamos pagamento via PIX e cartão de débito, de forma rápida e segura.",
-  },
-  {
     q: "Quais formas de pagamento são aceitas?",
     a: "Trabalhamos com PIX e cartão de débito. Ambos são processados de forma segura, e você recebe a confirmação do pagamento antes do início da consulta.",
   },
