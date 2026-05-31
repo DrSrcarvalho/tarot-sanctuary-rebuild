@@ -16,7 +16,11 @@ const faqs = [
   },
   {
     q: "Qual o valor da consulta de tarot?",
-    a: "Aceitamos pagamento via PIX e cartão de débito. Entre em contato pelo WhatsApp para saber os valores atuais e agendar sua consulta de tarot online.",
+    a: "Cada consulta de tarot místico online custa R$ 20,00. Aceitamos pagamento via PIX e cartão de débito, de forma rápida e segura.",
+  },
+  {
+    q: "Quais formas de pagamento são aceitas?",
+    a: "Trabalhamos com PIX e cartão de débito. Ambos são processados de forma segura, e você recebe a confirmação do pagamento antes do início da consulta.",
   },
   {
     q: "Posso fazer consulta de tarot por WhatsApp?",
