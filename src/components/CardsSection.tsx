@@ -21,7 +21,7 @@ const CardsSection = () => {
             As Cartas Sagradas
           </h2>
           <p className="font-body text-lg text-foreground/60 max-w-2xl mx-auto">
-            Cada carta do Tarot de Waite carrega séculos de sabedoria esotérica, revelando verdades ocultas e caminhos a seguir.
+            Cada carta do Tarot de Waite carrega séculos de sabedoria esotérica. Conheça o significado das principais cartas do tarot e descubra o que as mensagens ocultas revelam sobre seu caminho.
           </p>
         </div>
 
