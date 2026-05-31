@@ -5,11 +5,11 @@ import tarotMoon from "@/assets/tarot-moon.png";
 import tarotSun from "@/assets/tarot-sun.png";
 
 const cards = [
-  { name: "O Louco", desc: "Novos começos, espontaneidade e aventura", img: tarotFool },
-  { name: "A Sacerdotisa", desc: "Intuição, mistério e sabedoria interior", img: tarotPriestess },
-  { name: "A Estrela", desc: "Esperança, inspiração e renovação espiritual", img: tarotStar },
-  { name: "A Lua", desc: "Intuição, sonhos e o inconsciente", img: tarotMoon },
-  { name: "O Sol", desc: "Alegria, sucesso e vitalidade", img: tarotSun },
+  { name: "O Louco", desc: "O Louco representa novos começos, aventura e fé no universo. Surge quando você inicia uma nova jornada com coragem.", img: tarotFool },
+  { name: "A Sacerdotisa", desc: "A Sacerdotisa simboliza intuição, mistério e sabedoria interior, revelando verdades ocultas do subconsciente.", img: tarotPriestess },
+  { name: "A Estrela", desc: "A Estrela traz esperança, renovação e fé após momentos difíceis — sinal de cura e sonhos alinhados ao universo.", img: tarotStar },
+  { name: "A Lua", desc: "A Lua revela intuição, sonhos e o inconsciente, iluminando o que ainda está oculto em seu caminho.", img: tarotMoon },
+  { name: "O Sol", desc: "O Sol representa alegria, sucesso, vitalidade e a clareza que vem após a superação dos desafios.", img: tarotSun },
 ];
 
 const CardsSection = () => {
