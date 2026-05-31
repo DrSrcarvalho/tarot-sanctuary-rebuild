@@ -7,28 +7,28 @@ import {
 
 const faqs = [
   {
-    q: "Quanto tempo demora para receber a resposta?",
-    a: "A resposta é entregue em até 2 horas após a confirmação do pagamento e o envio da sua pergunta pelo WhatsApp.",
+    q: "Como funciona a consulta de tarot online?",
+    a: "A consulta de tarot místico online é realizada via WhatsApp. Você envia sua pergunta, as cartas são tiradas em ambiente energizado e você recebe a interpretação completa com orientação personalizada em até 24 horas.",
   },
   {
-    q: "Como é feito o pagamento?",
-    a: "Você pode pagar via PIX (instantâneo) ou Cartão de Débito. Após o pagamento, basta enviar o comprovante junto com sua pergunta.",
+    q: "O tarot místico realmente funciona?",
+    a: "O tarot é uma ferramenta milenar de autoconhecimento e orientação. Com mais de 10 anos de experiência e 500 consultas realizadas, o Tarot Místico tem 98% de satisfação entre os consulentes.",
+  },
+  {
+    q: "Qual o valor da consulta de tarot?",
+    a: "Aceitamos pagamento via PIX e cartão de débito. Entre em contato pelo WhatsApp para saber os valores atuais e agendar sua consulta de tarot online.",
+  },
+  {
+    q: "Posso fazer consulta de tarot por WhatsApp?",
+    a: "Sim! Todas as consultas de tarot místico podem ser realizadas online via WhatsApp, de qualquer lugar do Brasil.",
   },
   {
     q: "Minha consulta é realmente sigilosa?",
     a: "Sim, 100% sigilosa. Suas perguntas e respostas ficam apenas entre você e a tarô-leitora. Não compartilhamos nenhuma informação.",
   },
   {
-    q: "Posso fazer mais de uma pergunta?",
-    a: "Sim! Cada pergunta é tratada individualmente, com foco e energia dedicados a ela.",
-  },
-  {
     q: "Como devo formular minha pergunta?",
     a: "Seja clara e específica sobre o que deseja saber. Perguntas abertas (como, por que, qual caminho) trazem leituras mais ricas.",
-  },
-  {
-    q: "A consulta é feita por WhatsApp?",
-    a: "Sim, todo o atendimento acontece pelo WhatsApp, de forma prática e discreta, no horário que for melhor para você.",
   },
 ];
 
