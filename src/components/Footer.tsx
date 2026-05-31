@@ -10,7 +10,7 @@ const Footer = () => {
             Tarot Místico
           </span>
         </div>
-        <div className="text-center sm:text-right">
+        <div className="text-center sm:text-center">
           <p className="font-body text-sm text-muted-foreground">
             © 2024 Tarot Místico. Todos os direitos reservados.
           </p>
