@@ -30,7 +30,12 @@ export default async function handler(req, res) {
 
   const dateOfExpiration = new Date(Date.now() + EXPIRATION_MINUTES * 60 * 1000);
   // Mercado Pago exige o formato com offset de timezone, ex: 2024-01-01T10:00:00.000-03:00
-  const isoWithOffset = dateOfExpiration.toISOString().replace('Z', '-03:00');
+  // toISOString() devolve o horário em UTC; para representar esse mesmo instante como
+  // horário de Brasília (-03:00), subtraímos 3h antes de formatar como texto.
+  const BR_OFFSET_MS = 3 * 60 * 60 * 1000;
+  const isoWithOffset = new Date(dateOfExpiration.getTime() - BR_OFFSET_MS)
+    .toISOString()
+    .replace('Z', '-03:00');
 
   const parts = (nome || 'Cliente Simpatias').trim().split(/\s+/);
   const firstName = parts[0] || 'Cliente';
