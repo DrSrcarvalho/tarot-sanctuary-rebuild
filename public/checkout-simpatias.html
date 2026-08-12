@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprar — Simpatias & Rituais</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+  :root{
+    --bg-1:#4c3267; --bg-2:#2e1c40; --card:#261537; --border-mystic:#614979;
+    --gold:#e8b130; --gold-2:#e4bf67; --gold-dark:#c28b0a;
+    --cream:#f1ede4; --cream-dim:#d8cfe6;
+    --font-display:'Cinzel', serif; --font-body:'Cormorant Garamond', serif;
+    --red:#c85c5c; --green:#5fae7a;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#160d24; font-family:var(--font-body); }
+
+  .pix-section{
+    max-width:640px; margin:40px auto; background: radial-gradient(ellipse at center top, var(--bg-1) 0%, var(--bg-2) 70%);
+    border:1px solid var(--border-mystic); border-radius:4px; padding:50px 30px; text-align:center; color:var(--cream);
+  }
+  .pix-section h2{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:2px; font-size:26px; margin-bottom:14px; }
+  .pix-section h2 span{ background:linear-gradient(135deg, var(--gold), var(--gold-2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .pix-section p.lead{ font-size:18px; color:var(--cream-dim); max-width:440px; margin:0 auto 28px; }
+  .price-tag{ font-family:var(--font-display); font-size:30px; color:var(--gold); margin-bottom:24px; }
+
+  .btn-gold{
+    font-family:var(--font-display); font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
+    font-size:14px; cursor:pointer; border:none; background:var(--gold); color:var(--bg-2);
+    padding:16px 34px; border-radius:4px; transition:background .2s;
+  }
+  .btn-gold:hover{ background:var(--gold-dark); }
+  .btn-gold:disabled{ opacity:0.6; cursor:not-allowed; }
+
+  /* MODAL */
+  .pix-overlay{ display:none; position:fixed; inset:0; background:rgba(15,9,27,0.82); z-index:9999; align-items:center; justify-content:center; padding:16px; }
+  .pix-overlay.open{ display:flex; }
+  .pix-modal{ background:var(--card); border:1px solid var(--border-mystic); border-radius:6px; max-width:440px; width:100%; padding:32px 28px; position:relative; color:var(--cream); text-align:center; max-height:90vh; overflow-y:auto; }
+  .pix-close{ position:absolute; top:12px; right:14px; background:none; border:none; font-size:20px; color:var(--cream-dim); cursor:pointer; }
+
+  .pix-step h3{ font-family:var(--font-display); font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--gold); font-size:18px; margin-bottom:16px; }
+  .pix-input{ width:100%; padding:13px 16px; border-radius:4px; border:1.5px solid var(--border-mystic); background:rgba(255,255,255,0.05); color:var(--cream); font-size:16px; margin-bottom:14px; font-family:var(--font-body); }
+  .pix-input::placeholder{ color:#a89bc0; }
+  .pix-input:focus{ outline:none; border-color:var(--gold); }
+  .pix-error{ color:var(--red); font-size:14px; margin-bottom:10px; display:none; }
+
+  .qr-img{ width:220px; height:220px; margin:0 auto 18px; border-radius:6px; border:6px solid white; }
+  .copia-cola{ display:flex; gap:8px; margin-bottom:16px; }
+  .copia-cola input{ flex:1; font-size:12px; padding:10px; border-radius:4px; border:1px solid var(--border-mystic); background:rgba(255,255,255,0.05); color:var(--cream-dim); font-family:monospace; }
+  .btn-copy{ font-family:var(--font-display); font-size:11px; letter-spacing:1px; text-transform:uppercase; background:transparent; border:1px solid var(--gold); color:var(--gold); border-radius:4px; padding:0 14px; cursor:pointer; white-space:nowrap; }
+  .btn-copy:hover{ background:rgba(232,177,48,0.1); }
+  .status-line{ font-size:14.5px; color:var(--cream-dim); margin-bottom:6px; display:flex; align-items:center; justify-content:center; gap:8px; }
+  .dot{ width:8px; height:8px; border-radius:50%; background:var(--gold); animation:pulse 1.2s infinite ease-in-out; }
+  @keyframes pulse{ 0%,100%{opacity:0.3;} 50%{opacity:1;} }
+  .timer{ font-size:12.5px; color:#9a8fb5; margin-bottom:18px; }
+
+  .success-icon{ font-size:44px; margin-bottom:10px; }
+  .pix-step p.desc{ font-size:15.5px; color:var(--cream-dim); margin-bottom:22px; line-height:1.5; }
+</style>
+</head>
+<body>
+
+<div class="pix-section">
+  <h2>Comprar <span>Simpatias &amp; Rituais</span></h2>
+  <p class="lead">35 simpatias completas em PDF. Pagamento via Pix, liberação automática assim que confirmado.</p>
+  <div class="price-tag">R$ 49,90</div>
+  <button class="btn-gold" onclick="pixOpen()">Comprar agora com Pix</button>
+</div>
+
+<div class="pix-overlay" id="pixOverlay">
+  <div class="pix-modal">
+    <button class="pix-close" onclick="pixClose()">✕</button>
+
+    <!-- ETAPA 1: E-MAIL -->
+    <div class="pix-step" id="stepEmail">
+      <h3>Seus dados</h3>
+      <p class="desc">Informe seu e-mail para gerar o Pix. O e-book fica disponível para download assim que o pagamento for confirmado.</p>
+      <p class="pix-error" id="emailError"></p>
+      <input class="pix-input" type="text" id="inputNome" placeholder="Seu nome (opcional)">
+      <input class="pix-input" type="email" id="inputEmail" placeholder="Seu melhor e-mail" required>
+      <button class="btn-gold" id="btnGerarPix" onclick="criarPix()" style="width:100%;">Gerar Pix — R$ 49,90</button>
+    </div>
+
+    <!-- ETAPA 2: QR CODE -->
+    <div class="pix-step" id="stepQr" style="display:none;">
+      <h3>Escaneie ou copie o código</h3>
+      <img class="qr-img" id="qrImg" src="" alt="QR Code Pix">
+      <div class="copia-cola">
+        <input type="text" id="copiaColaInput" readonly>
+        <button class="btn-copy" onclick="copiarCodigo()">Copiar</button>
+      </div>
+      <div class="status-line"><span class="dot"></span> <span id="statusText">Aguardando confirmação do pagamento…</span></div>
+      <div class="timer" id="timerText"></div>
+    </div>
+
+    <!-- ETAPA 3: SUCESSO -->
+    <div class="pix-step" id="stepSuccess" style="display:none;">
+      <div class="success-icon">✅</div>
+      <h3>Pagamento confirmado</h3>
+      <p class="desc">Seu e-book já está liberado. Clique no botão abaixo para baixar o PDF.</p>
+      <a class="btn-gold" id="btnDownload" href="#" style="width:100%; display:block; text-decoration:none;">Baixar meu e-book</a>
+    </div>
+
+    <!-- ETAPA ERRO -->
+    <div class="pix-step" id="stepError" style="display:none;">
+      <h3 style="color:var(--red);">Não foi possível concluir</h3>
+      <p class="desc" id="errorText">O código Pix expirou ou o pagamento não foi aprovado.</p>
+      <button class="btn-gold" onclick="reiniciar()" style="width:100%;">Tentar novamente</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentPaymentId = null;
+let pollInterval = null;
+let countdownInterval = null;
+
+function pixOpen(){
+  document.getElementById('pixOverlay').classList.add('open');
+  mostrarEtapa('stepEmail');
+}
+function pixClose(){
+  document.getElementById('pixOverlay').classList.remove('open');
+  pararPolling();
+}
+function mostrarEtapa(id){
+  ['stepEmail','stepQr','stepSuccess','stepError'].forEach(s => {
+    document.getElementById(s).style.display = (s === id) ? 'block' : 'none';
+  });
+}
+function pararPolling(){
+  if (pollInterval) { clearInterval(pollInterval); pollInterval = null; }
+  if (countdownInterval) { clearInterval(countdownInterval); countdownInterval = null; }
+}
+function reiniciar(){
+  pararPolling();
+  currentPaymentId = null;
+  document.getElementById('emailError').style.display = 'none';
+  mostrarEtapa('stepEmail');
+}
+
+async function criarPix(){
+  const email = document.getElementById('inputEmail').value.trim();
+  const nome = document.getElementById('inputNome').value.trim();
+  const errorEl = document.getElementById('emailError');
+  errorEl.style.display = 'none';
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errorEl.textContent = 'Digite um e-mail válido.';
+    errorEl.style.display = 'block';
+    return;
+  }
+
+  const btn = document.getElementById('btnGerarPix');
+  btn.disabled = true;
+  btn.textContent = 'Gerando…';
+
+  try {
+    const resp = await fetch('/api/create-pix', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, nome }),
+    });
+    const data = await resp.json();
+
+    if (!resp.ok) {
+      throw new Error(data.error || 'Erro ao gerar o Pix');
+    }
+
+    currentPaymentId = data.payment_id;
+    document.getElementById('qrImg').src = 'data:image/png;base64,' + data.qr_code_base64;
+    document.getElementById('copiaColaInput').value = data.qr_code;
+    mostrarEtapa('stepQr');
+    iniciarContagem(data.expires_at);
+    iniciarPolling();
+  } catch (err) {
+    document.getElementById('errorText').textContent = err.message || 'Não foi possível gerar o Pix. Tente novamente.';
+    mostrarEtapa('stepError');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Gerar Pix — R$ 49,90';
+  }
+}
+
+function copiarCodigo(){
+  const input = document.getElementById('copiaColaInput');
+  input.select();
+  input.setSelectionRange(0, 99999);
+  navigator.clipboard && navigator.clipboard.writeText(input.value);
+  const btn = document.querySelector('.btn-copy');
+  const original = btn.textContent;
+  btn.textContent = 'Copiado!';
+  setTimeout(() => { btn.textContent = original; }, 1800);
+}
+
+function iniciarContagem(expiresAtIso){
+  const expiresAt = new Date(expiresAtIso).getTime();
+  const timerEl = document.getElementById('timerText');
+  countdownInterval = setInterval(() => {
+    const diff = expiresAt - Date.now();
+    if (diff <= 0) {
+      pararPolling();
+      document.getElementById('errorText').textContent = 'O código Pix expirou. Gere um novo código para continuar.';
+      mostrarEtapa('stepError');
+      return;
+    }
+    const min = Math.floor(diff / 60000);
+    const sec = Math.floor((diff % 60000) / 1000);
+    timerEl.textContent = `Código válido por mais ${min}:${String(sec).padStart(2,'0')}`;
+  }, 1000);
+}
+
+function iniciarPolling(){
+  pollInterval = setInterval(async () => {
+    if (!currentPaymentId) return;
+    try {
+      const resp = await fetch('/api/check-payment?id=' + encodeURIComponent(currentPaymentId));
+      const data = await resp.json();
+      if (data.status === 'approved') {
+        pararPolling();
+        document.getElementById('btnDownload').href =
+          '/api/download?id=' + encodeURIComponent(currentPaymentId) + '&token=' + encodeURIComponent(data.download_token);
+        mostrarEtapa('stepSuccess');
+      } else if (['rejected','cancelled'].includes(data.status)) {
+        pararPolling();
+        document.getElementById('errorText').textContent = 'O pagamento não foi aprovado. Você pode tentar novamente.';
+        mostrarEtapa('stepError');
+      }
+      // status "pending"/"in_process": continua tentando
+    } catch (err) {
+      console.error('Erro ao consultar pagamento:', err);
+    }
+  }, 4000);
+}
+
+document.getElementById('pixOverlay').addEventListener('click', function(e){
+  if (e.target === this) pixClose();
+});
+</script>
+</body>
+</html>
