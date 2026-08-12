@@ -6,6 +6,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import CardsSection from "@/components/CardsSection";
 import QuestionTypesSection from "@/components/QuestionTypesSection";
 import ConsultationSection from "@/components/ConsultationSection";
+import SimpatiasSection from "@/components/SimpatiasSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
@@ -16,6 +17,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <SimpatiasSection />
       <AboutSection />
       <HowItWorksSection />
       <CardsSection />
