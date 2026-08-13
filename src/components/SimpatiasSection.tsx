@@ -24,10 +24,7 @@ const SimpatiasSection = () => {
 
           <div className="font-display text-3xl text-gold mb-8">R$ 49,90</div>
 
-          
-            href="/checkout-simpatias.html"
-            className="inline-flex items-center justify-center gap-2 font-display text-sm tracking-widest uppercase bg-primary text-primary-foreground py-4 px-10 rounded hover:bg-gold-dark transition-colors glow-gold"
-          >
+          <a href="/checkout-simpatias.html" className="inline-flex items-center justify-center gap-2 font-display text-sm tracking-widest uppercase bg-primary text-primary-foreground py-4 px-10 rounded hover:bg-gold-dark transition-colors glow-gold">
             <BookOpen className="w-4 h-4" />
             Comprar agora com Pix
           </a>
